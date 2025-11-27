@@ -159,454 +159,502 @@
                             <i class="fas fa-trophy text-2xl"></i>
                         </div>
                         <span class="text-green-400 text-sm font-semibold">+12%</span>
-                        class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-red-500/30 rounded-2xl
-                        p-6">
-                        <div class="flex items-center space-x-4 mb-4">
-                            <div class="w-14 h-14 bg-red-500/20 rounded-xl flex items-center justify-center">
-                                <i class="fas fa-hand-holding-usd text-red-400 text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold">Money Lost</h3>
-                                <p class="text-sm text-gray-400">Free cuts given</p>
-                            </div>
-                        </div>
-                        <p class="text-4xl font-bold text-red-400 mb-2">S/.38,750</p>
-                        <div class="flex items-center justify-between text-sm">
-                            <span class="text-gray-400">982 free cuts</span>
-                            <span class="text-red-400">-S/.39.47 avg</span>
-                        </div>
                     </div>
-
-                    <div
-                        class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-green-500/30 rounded-2xl p-6">
-                        <div class="flex items-center space-x-4 mb-4">
-                            <div class="w-14 h-14 bg-green-500/20 rounded-xl flex items-center justify-center">
-                                <i class="fas fa-coins text-green-400 text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold">Extra Revenue</h3>
-                                <p class="text-sm text-gray-400">From double payments</p>
-                            </div>
-                        </div>
-                        <p class="text-4xl font-bold text-green-400 mb-2">S/.72,350</p>
-                        <div class="flex items-center justify-between text-sm">
-                            <span class="text-gray-400">1,865 double pays</span>
-                            <span class="text-green-400">+S/.38.79 avg</span>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gold-500/30 rounded-2xl p-6">
-                        <div class="flex items-center space-x-4 mb-4">
-                            <div class="w-14 h-14 bg-gold-500/20 rounded-xl flex items-center justify-center">
-                                <i class="fas fa-chart-line text-gold-400 text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold">Net Profit</h3>
-                                <p class="text-sm text-gray-400">After free cuts</p>
-                            </div>
-                        </div>
-                        <p class="text-4xl font-bold text-gold-400 mb-2">S/.33,600</p>
-                        <div class="flex items-center justify-between text-sm">
-                            <span class="text-gray-400">From 2,847 battles</span>
-                            <span class="text-gold-400">+S/.11.80 avg</span>
-                        </div>
-                    </div>
+                    <h3 class="text-gray-400 text-sm font-medium mb-1">Customer Losses</h3>
+                    <p class="text-3xl font-bold" id="customer-losses">1,865</p>
+                    <p class="text-xs text-gray-500 mt-2">65.5% loss rate</p>
                 </div>
 
-                <!-- Update Revenue Data -->
                 <div
-                    class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
-                    <h3 class="text-2xl font-bold mb-6">Update Revenue Data</h3>
-                    <form id="update-revenue-form" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold mb-2">Money Lost (S/.)</label>
-                            <input type="number" id="money-lost-input" class="input-field" value="38750" step="0.01">
+                    class="bg-gradient-to-br from-gold-600/20 to-gold-800/20 border border-gold-500/30 rounded-2xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-gold-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-dollar-sign text-2xl"></i>
                         </div>
-                        <div>
-                            <label class="block text-sm font-semibold mb-2">Extra Revenue (S/.)</label>
-                            <input type="number" id="extra-revenue-input" class="input-field" value="72350" step="0.01">
-                        </div>
-                        <div class="flex items-end">
-                            <button type="submit" class="btn-primary w-full">
-                                <i class="fas fa-save mr-2"></i>
-                                Update Data
-                            </button>
-                        </div>
-                    </form>
+                        <span class="text-green-400 text-sm font-semibold">+22%</span>
+                    </div>
+                    <h3 class="text-gray-400 text-sm font-medium mb-1">Total Revenue</h3>
+                    <p class="text-3xl font-bold" id="total-revenue">S/.128,450</p>
+                    <p class="text-xs text-gray-500 mt-2">S/.45,200 this month</p>
                 </div>
             </div>
 
-            <!-- CUSTOMERS SECTION -->
-            <div id="customers-section" class="section-content" style="display: none;">
-                <h2 class="text-3xl font-bold mb-6">Customer Analytics</h2>
+            <!-- Charts Row -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <div
+                    class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
+                    <h3 class="text-2xl font-bold mb-6">Battle Trends (Last 30 Days)</h3>
+                    <div style="position: relative; height: 300px;">
+                        <canvas id="trendsChart"></canvas>
+                    </div>
+                </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                    <div
-                        class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
-                        <h3 class="text-2xl font-bold mb-6">Customer Base</h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-royal-500/10 rounded-xl p-4 border border-royal-500/30">
-                                <div class="flex items-center justify-between mb-2">
-                                    <i class="fas fa-user-plus text-royal-400 text-xl"></i>
-                                    <span class="text-xs text-royal-400 font-semibold">42%</span>
-                                </div>
-                                <p class="text-2xl font-bold mb-1" id="new-customers">1,196</p>
-                                <p class="text-xs text-gray-400">New Customers</p>
-                            </div>
-                            <div class="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30">
-                                <div class="flex items-center justify-between mb-2">
-                                    <i class="fas fa-user-check text-purple-400 text-xl"></i>
-                                    <span class="text-xs text-purple-400 font-semibold">58%</span>
-                                </div>
-                                <p class="text-2xl font-bold mb-1" id="returning-customers">1,651</p>
-                                <p class="text-xs text-gray-400">Returning</p>
-                            </div>
+                <div
+                    class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
+                    <h3 class="text-2xl font-bold mb-6">Revenue Distribution</h3>
+                    <div style="position: relative; height: 300px;">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
+                <h3 class="text-2xl font-bold mb-6">Recent Battles</h3>
+                <div id="recent-battles" class="space-y-3">
+                    <!-- Dynamic content -->
+                </div>
+            </div>
+        </div>
+
+        <!-- REVENUE SECTION -->
+        <div id="revenue-section" class="section-content" style="display: none;">
+            <h2 class="text-3xl font-bold mb-6">Revenue Analytics</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                <div class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-red-500/30 rounded-2xl p-6">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-14 h-14 bg-red-500/20 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-hand-holding-usd text-red-400 text-2xl"></i>
                         </div>
-                        <div class="mt-6 pt-6 border-t border-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold">Money Lost</h3>
+                            <p class="text-sm text-gray-400">Free cuts given</p>
+                        </div>
+                    </div>
+                    <p class="text-4xl font-bold text-red-400 mb-2">S/.38,750</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-400">982 free cuts</span>
+                        <span class="text-red-400">-S/.39.47 avg</span>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-green-500/30 rounded-2xl p-6">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-14 h-14 bg-green-500/20 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-coins text-green-400 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Extra Revenue</h3>
+                            <p class="text-sm text-gray-400">From double payments</p>
+                        </div>
+                    </div>
+                    <p class="text-4xl font-bold text-green-400 mb-2">S/.72,350</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-400">1,865 double pays</span>
+                        <span class="text-green-400">+S/.38.79 avg</span>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gold-500/30 rounded-2xl p-6">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-14 h-14 bg-gold-500/20 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-chart-line text-gold-400 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Net Profit</h3>
+                            <p class="text-sm text-gray-400">After free cuts</p>
+                        </div>
+                    </div>
+                    <p class="text-4xl font-bold text-gold-400 mb-2">S/.33,600</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-400">From 2,847 battles</span>
+                        <span class="text-gold-400">+S/.11.80 avg</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Update Revenue Data -->
+            <div class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
+                <h3 class="text-2xl font-bold mb-6">Update Revenue Data</h3>
+                <form id="update-revenue-form" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Money Lost (S/.)</label>
+                        <input type="number" id="money-lost-input" class="input-field" value="38750" step="0.01">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Extra Revenue (S/.)</label>
+                        <input type="number" id="extra-revenue-input" class="input-field" value="72350" step="0.01">
+                    </div>
+                    <div class="flex items-end">
+                        <button type="submit" class="btn-primary w-full">
+                            <i class="fas fa-save mr-2"></i>
+                            Update Data
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- CUSTOMERS SECTION -->
+        <div id="customers-section" class="section-content" style="display: none;">
+            <h2 class="text-3xl font-bold mb-6">Customer Analytics</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <div
+                    class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
+                    <h3 class="text-2xl font-bold mb-6">Customer Base</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-royal-500/10 rounded-xl p-4 border border-royal-500/30">
                             <div class="flex items-center justify-between mb-2">
-                                <span class="text-sm text-gray-400">Average Visits</span>
-                                <span class="font-bold" id="avg-visits">3.2x</span>
+                                <i class="fas fa-user-plus text-royal-400 text-xl"></i>
+                                <span class="text-xs text-royal-400 font-semibold">42%</span>
                             </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm text-gray-400">Retention Rate</span>
-                                <span class="font-bold text-green-400" id="retention-rate">68%</span>
+                            <p class="text-2xl font-bold mb-1" id="new-customers">1,196</p>
+                            <p class="text-xs text-gray-400">New Customers</p>
+                        </div>
+                        <div class="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30">
+                            <div class="flex items-center justify-between mb-2">
+                                <i class="fas fa-user-check text-purple-400 text-xl"></i>
+                                <span class="text-xs text-purple-400 font-semibold">58%</span>
                             </div>
+                            <p class="text-2xl font-bold mb-1" id="returning-customers">1,651</p>
+                            <p class="text-xs text-gray-400">Returning</p>
                         </div>
                     </div>
-
-                    <!-- Add New Customer -->
-                    <div
-                        class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
-                        <h3 class="text-2xl font-bold mb-6">Add New Customer</h3>
-                        <form id="add-customer-form" class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-semibold mb-2">Customer Name</label>
-                                <input type="text" id="customer-name" class="input-field" placeholder="John Doe"
-                                    required>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-semibold mb-2">Email</label>
-                                <input type="email" id="customer-email" class="input-field"
-                                    placeholder="john@example.com" required>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-semibold mb-2">Customer Type</label>
-                                <select id="customer-type" class="input-field" required>
-                                    <option value="new">New Customer</option>
-                                    <option value="returning">Returning Customer</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn-primary w-full">
-                                <i class="fas fa-user-plus mr-2"></i>
-                                Add Customer
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SERVICES SECTION -->
-            <div id="services-section" class="section-content" style="display: none;">
-                <h2 class="text-3xl font-bold mb-6">Service Management</h2>
-
-                <div
-                    class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6 mb-6">
-                    <h3 class="text-2xl font-bold mb-6">Service Popularity</h3>
-                    <div id="services-list" class="space-y-4">
-                        <!-- Dynamic content -->
+                    <div class="mt-6 pt-6 border-t border-gray-700">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-gray-400">Average Visits</span>
+                            <span class="font-bold" id="avg-visits">3.2x</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-400">Retention Rate</span>
+                            <span class="font-bold text-green-400" id="retention-rate">68%</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Update Service Pricing -->
+                <!-- Add New Customer -->
                 <div
                     class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
-                    <h3 class="text-2xl font-bold mb-6">Update Service Prices</h3>
-                    <form id="update-pricing-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold mb-2">Service</label>
-                            <select id="service-select" class="input-field">
-                                <option value="kings">King's Package</option>
-                                <option value="fade">Royal Fade</option>
-                                <option value="classic">Classic Cut</option>
-                                <option value="beard">Beard Trim</option>
-                                <option value="kids">Kids Cut</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold mb-2">New Price (S/.)</label>
-                            <input type="number" id="new-price" class="input-field" placeholder="50.00" step="0.01"
-                                required>
-                        </div>
-                        <div class="md:col-span-2">
-                            <button type="submit" class="btn-primary">
-                                <i class="fas fa-edit mr-2"></i>
-                                Update Price
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <!-- BATTLES SECTION -->
-            <div id="battles-section" class="section-content" style="display: none;">
-                <h2 class="text-3xl font-bold mb-6">Battle History</h2>
-
-                <div
-                    class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6 mb-6">
-                    <div class="flex items-center justify-between mb-6">
-                        <h3 class="text-2xl font-bold">All Battles</h3>
-                        <div class="flex items-center space-x-2">
-                            <select class="input-field text-sm py-2">
-                                <option>All Results</option>
-                                <option>Customer Wins</option>
-                                <option>Customer Losses</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div id="battles-list" class="space-y-3">
-                        <!-- Dynamic content -->
-                    </div>
-                </div>
-
-                <!-- Add New Battle Result -->
-                <div
-                    class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
-                    <h3 class="text-2xl font-bold mb-6">Record New Battle</h3>
-                    <form id="add-battle-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <h3 class="text-2xl font-bold mb-6">Add New Customer</h3>
+                    <form id="add-customer-form" class="space-y-4">
                         <div>
                             <label class="block text-sm font-semibold mb-2">Customer Name</label>
-                            <input type="text" id="battle-customer" class="input-field" placeholder="Customer Name"
+                            <input type="text" id="customer-name" class="input-field" placeholder="John Doe" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Email</label>
+                            <input type="email" id="customer-email" class="input-field" placeholder="john@example.com"
                                 required>
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold mb-2">Service</label>
-                            <select id="battle-service" class="input-field" required>
-                                <option value="King's Package">King's Package</option>
-                                <option value="Royal Fade">Royal Fade</option>
-                                <option value="Classic Cut">Classic Cut</option>
+                            <label class="block text-sm font-semibold mb-2">Customer Type</label>
+                            <select id="customer-type" class="input-field" required>
+                                <option value="new">New Customer</option>
+                                <option value="returning">Returning Customer</option>
                             </select>
                         </div>
-                        <div>
-                            <label class="block text-sm font-semibold mb-2">Battle Result</label>
-                            <select id="battle-result" class="input-field" required>
-                                <option value="loss">Customer Lost (Double Pay)</option>
-                                <option value="win">Customer Won (Free Cut)</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold mb-2">Amount (S/.)</label>
-                            <input type="number" id="battle-amount" class="input-field" placeholder="65.00" step="0.01"
-                                required>
-                        </div>
-                        <div class="md:col-span-2">
-                            <button type="submit" class="btn-primary">
-                                <i class="fas fa-plus mr-2"></i>
-                                Record Battle
-                            </button>
-                        </div>
+                        <button type="submit" class="btn-primary w-full">
+                            <i class="fas fa-user-plus mr-2"></i>
+                            Add Customer
+                        </button>
                     </form>
                 </div>
             </div>
+        </div>
 
-            <!-- REPORTS SECTION -->
-            <div id="reports-section" class="section-content" style="display: none;">
-                <h2 class="text-3xl font-bold mb-6">Generate Reports</h2>
+        <!-- SERVICES SECTION -->
+        <div id="services-section" class="section-content" style="display: none;">
+            <h2 class="text-3xl font-bold mb-6">Service Management</h2>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <!-- PDF Report -->
-                    <div
-                        class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
-                        <div class="flex items-center space-x-4 mb-6">
-                            <div class="w-14 h-14 bg-red-500/20 rounded-xl flex items-center justify-center">
-                                <i class="fas fa-file-pdf text-red-400 text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold">PDF Report</h3>
-                                <p class="text-sm text-gray-400">Complete business summary</p>
-                            </div>
-                        </div>
-                        <form id="pdf-report-form" class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-semibold mb-2">Report Period</label>
-                                <select class="input-field">
-                                    <option>Last 7 Days</option>
-                                    <option>Last 30 Days</option>
-                                    <option>Last 90 Days</option>
-                                    <option>All Time</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn-primary w-full">
-                                <i class="fas fa-download mr-2"></i>
-                                Download PDF
-                            </button>
-                        </form>
-                    </div>
-
-                    <!-- Email Report -->
-                    <div
-                        class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
-                        <div class="flex items-center space-x-4 mb-6">
-                            <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center">
-                                <i class="fas fa-envelope text-blue-400 text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold">Email Report</h3>
-                                <p class="text-sm text-gray-400">Send to your inbox</p>
-                            </div>
-                        </div>
-                        <form id="email-report-form" class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-semibold mb-2">Email Address</label>
-                                <input type="email" id="report-email" class="input-field"
-                                    placeholder="admin@royalcuts.com" required>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-semibold mb-2">Report Type</label>
-                                <select class="input-field">
-                                    <option>Daily Summary</option>
-                                    <option>Weekly Report</option>
-                                    <option>Monthly Report</option>
-                                    <option>Custom Period</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn-primary w-full">
-                                <i class="fas fa-paper-plane mr-2"></i>
-                                Send Email
-                            </button>
-                        </form>
-                    </div>
-
-                    <!-- Excel Export -->
-                    <div
-                        class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
-                        <div class="flex items-center space-x-4 mb-6">
-                            <div class="w-14 h-14 bg-green-500/20 rounded-xl flex items-center justify-center">
-                                <i class="fas fa-file-excel text-green-400 text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold">Excel Export</h3>
-                                <p class="text-sm text-gray-400">Export data to CSV</p>
-                            </div>
-                        </div>
-                        <div class="space-y-4">
-                            <button onclick="exportToCSV('battles')" class="btn-outline w-full">
-                                <i class="fas fa-download mr-2"></i>
-                                Export Battles Data
-                            </button>
-                            <button onclick="exportToCSV('revenue')" class="btn-outline w-full">
-                                <i class="fas fa-download mr-2"></i>
-                                Export Revenue Data
-                            </button>
-                            <button onclick="exportToCSV('customers')" class="btn-outline w-full">
-                                <i class="fas fa-download mr-2"></i>
-                                Export Customer Data
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Schedule Reports -->
-                    <div
-                        class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
-                        <div class="flex items-center space-x-4 mb-6">
-                            <div class="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center">
-                                <i class="fas fa-calendar-alt text-purple-400 text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold">Schedule Reports</h3>
-                                <p class="text-sm text-gray-400">Automatic delivery</p>
-                            </div>
-                        </div>
-                        <form id="schedule-report-form" class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-semibold mb-2">Frequency</label>
-                                <select class="input-field">
-                                    <option>Daily at 9:00 AM</option>
-                                    <option>Weekly on Monday</option>
-                                    <option>Monthly on 1st</option>
-                                </select>
-                            </div>
-                            <div
-                                class="flex items-center space-x-2 p-4 bg-green-500/10 rounded-lg border border-green-500/30">
-                                <i class="fas fa-check-circle text-green-400"></i>
-                                <span class="text-sm">Scheduled: Daily at 9:00 AM</span>
-                            </div>
-                            <button type="submit" class="btn-primary w-full">
-                                <i class="fas fa-save mr-2"></i>
-                                Update Schedule
-                            </button>
-                        </form>
-                    </div>
+            <div
+                class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6 mb-6">
+                <h3 class="text-2xl font-bold mb-6">Service Popularity</h3>
+                <div id="services-list" class="space-y-4">
+                    <!-- Dynamic content -->
                 </div>
             </div>
 
-            <!-- SETTINGS SECTION -->
-            <div id="settings-section" class="section-content" style="display: none;">
-                <h2 class="text-3xl font-bold mb-6">Settings & Configuration</h2>
-
-                <div class="grid grid-cols-1 gap-6">
-                    <!-- General Settings -->
-                    <div
-                        class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
-                        <h3 class="text-2xl font-bold mb-6">General Settings</h3>
-                        <form id="settings-form" class="space-y-6">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2">Business Name</label>
-                                    <input type="text" class="input-field" value="Royal Cuts Barbershop">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2">Currency</label>
-                                    <select class="input-field">
-                                        <option selected>S/. (Peruvian Soles)</option>
-                                        <option>$ (USD)</option>
-                                        <option>€ (EUR)</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2">Timezone</label>
-                                    <select class="input-field">
-                                        <option>GMT-5 (Lima)</option>
-                                        <option>GMT-6 (Central)</option>
-                                        <option>GMT-8 (Pacific)</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2">Language</label>
-                                    <select class="input-field">
-                                        <option>English</option>
-                                        <option>Español</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn-primary">
-                                <i class="fas fa-save mr-2"></i>
-                                Save Settings
-                            </button>
-                        </form>
+            <!-- Update Service Pricing -->
+            <div class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
+                <h3 class="text-2xl font-bold mb-6">Update Service Prices</h3>
+                <form id="update-pricing-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Service</label>
+                        <select id="service-select" class="input-field">
+                            <option value="kings">King's Package</option>
+                            <option value="fade">Royal Fade</option>
+                            <option value="classic">Classic Cut</option>
+                            <option value="beard">Beard Trim</option>
+                            <option value="kids">Kids Cut</option>
+                        </select>
                     </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">New Price (S/.)</label>
+                        <input type="number" id="new-price" class="input-field" placeholder="50.00" step="0.01"
+                            required>
+                    </div>
+                    <div class="md:col-span-2">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-edit mr-2"></i>
+                            Update Price
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
-                    <!-- Data Management -->
-                    <div
-                        class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
-                        <h3 class="text-2xl font-bold mb-6">Data Management</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <button onclick="refreshData()" class="btn-outline">
-                                <i class="fas fa-sync mr-2"></i>
-                                Refresh Data
-                            </button>
-                            <button onclick="clearCache()" class="btn-outline text-yellow-400 border-yellow-500">
-                                <i class="fas fa-broom mr-2"></i>
-                                Clear Cache
-                            </button>
-                            <button onclick="resetData()" class="btn-outline text-red-400 border-red-500">
-                                <i class="fas fa-exclamation-triangle mr-2"></i>
-                                Reset All Data
-                            </button>
+        <!-- BATTLES SECTION -->
+        <div id="battles-section" class="section-content" style="display: none;">
+            <h2 class="text-3xl font-bold mb-6">Battle History</h2>
+
+            <div
+                class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6 mb-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-2xl font-bold">All Battles</h3>
+                    <div class="flex items-center space-x-2">
+                        <select class="input-field text-sm py-2">
+                            <option>All Results</option>
+                            <option>Customer Wins</option>
+                            <option>Customer Losses</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="battles-list" class="space-y-3">
+                    <!-- Dynamic content -->
+                </div>
+            </div>
+
+            <!-- Add New Battle Result -->
+            <div class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
+                <h3 class="text-2xl font-bold mb-6">Record New Battle</h3>
+                <form id="add-battle-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Customer Name</label>
+                        <input type="text" id="battle-customer" class="input-field" placeholder="Customer Name"
+                            required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Service</label>
+                        <select id="battle-service" class="input-field" required>
+                            <option value="King's Package">King's Package</option>
+                            <option value="Royal Fade">Royal Fade</option>
+                            <option value="Classic Cut">Classic Cut</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Battle Result</label>
+                        <select id="battle-result" class="input-field" required>
+                            <option value="loss">Customer Lost (Double Pay)</option>
+                            <option value="win">Customer Won (Free Cut)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Amount (S/.)</label>
+                        <input type="number" id="battle-amount" class="input-field" placeholder="65.00" step="0.01"
+                            required>
+                    </div>
+                    <div class="md:col-span-2">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-plus mr-2"></i>
+                            Record Battle
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- REPORTS SECTION -->
+        <div id="reports-section" class="section-content" style="display: none;">
+            <h2 class="text-3xl font-bold mb-6">Generate Reports</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- PDF Report -->
+                <div
+                    class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-14 h-14 bg-red-500/20 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-file-pdf text-red-400 text-2xl"></i>
                         </div>
+                        <div>
+                            <h3 class="text-xl font-bold">PDF Report</h3>
+                            <p class="text-sm text-gray-400">Complete business summary</p>
+                        </div>
+                    </div>
+                    <form id="pdf-report-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Report Period</label>
+                            <select class="input-field">
+                                <option>Last 7 Days</option>
+                                <option>Last 30 Days</option>
+                                <option>Last 90 Days</option>
+                                <option>All Time</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">
+                            <i class="fas fa-download mr-2"></i>
+                            Download PDF
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Email Report -->
+                <div
+                    class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-envelope text-blue-400 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Email Report</h3>
+                            <p class="text-sm text-gray-400">Send to your inbox</p>
+                        </div>
+                    </div>
+                    <form id="email-report-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Email Address</label>
+                            <input type="email" id="report-email" class="input-field" placeholder="admin@royalcuts.com"
+                                required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Report Type</label>
+                            <select class="input-field">
+                                <option>Daily Summary</option>
+                                <option>Weekly Report</option>
+                                <option>Monthly Report</option>
+                                <option>Custom Period</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Email
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Excel Export -->
+                <div
+                    class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-14 h-14 bg-green-500/20 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-file-excel text-green-400 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Excel Export</h3>
+                            <p class="text-sm text-gray-400">Export data to CSV</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <button onclick="exportToCSV('battles')" class="btn-outline w-full">
+                            <i class="fas fa-download mr-2"></i>
+                            Export Battles Data
+                        </button>
+                        <button onclick="exportToCSV('revenue')" class="btn-outline w-full">
+                            <i class="fas fa-download mr-2"></i>
+                            Export Revenue Data
+                        </button>
+                        <button onclick="exportToCSV('customers')" class="btn-outline w-full">
+                            <i class="fas fa-download mr-2"></i>
+                            Export Customer Data
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Schedule Reports -->
+                <div
+                    class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-calendar-alt text-purple-400 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Schedule Reports</h3>
+                            <p class="text-sm text-gray-400">Automatic delivery</p>
+                        </div>
+                    </div>
+                    <form id="schedule-report-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Frequency</label>
+                            <select class="input-field">
+                                <option>Daily at 9:00 AM</option>
+                                <option>Weekly on Monday</option>
+                                <option>Monthly on 1st</option>
+                            </select>
+                        </div>
+                        <div
+                            class="flex items-center space-x-2 p-4 bg-green-500/10 rounded-lg border border-green-500/30">
+                            <i class="fas fa-check-circle text-green-400"></i>
+                            <span class="text-sm">Scheduled: Daily at 9:00 AM</span>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">
+                            <i class="fas fa-save mr-2"></i>
+                            Update Schedule
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- SETTINGS SECTION -->
+        <div id="settings-section" class="section-content" style="display: none;">
+            <h2 class="text-3xl font-bold mb-6">Settings & Configuration</h2>
+
+            <div class="grid grid-cols-1 gap-6">
+                <!-- General Settings -->
+                <div
+                    class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
+                    <h3 class="text-2xl font-bold mb-6">General Settings</h3>
+                    <form id="settings-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Business Name</label>
+                                <input type="text" class="input-field" value="Royal Cuts Barbershop">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Currency</label>
+                                <select class="input-field">
+                                    <option selected>S/. (Peruvian Soles)</option>
+                                    <option>$ (USD)</option>
+                                    <option>€ (EUR)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Timezone</label>
+                                <select class="input-field">
+                                    <option>GMT-5 (Lima)</option>
+                                    <option>GMT-6 (Central)</option>
+                                    <option>GMT-8 (Pacific)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Language</label>
+                                <select class="input-field">
+                                    <option>English</option>
+                                    <option>Español</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-save mr-2"></i>
+                            Save Settings
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Data Management -->
+                <div
+                    class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-royal-500/30 rounded-2xl p-6">
+                    <h3 class="text-2xl font-bold mb-6">Data Management</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <button onclick="refreshData()" class="btn-outline">
+                            <i class="fas fa-sync mr-2"></i>
+                            Refresh Data
+                        </button>
+                        <button onclick="clearCache()" class="btn-outline text-yellow-400 border-yellow-500">
+                            <i class="fas fa-broom mr-2"></i>
+                            Clear Cache
+                        </button>
+                        <button onclick="resetData()" class="btn-outline text-red-400 border-red-500">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>
+                            Reset All Data
+                        </button>
                     </div>
                 </div>
             </div>
+        </div>
 
     </main>
 

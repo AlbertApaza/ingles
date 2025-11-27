@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Royal Cuts Barbershop - Win a free haircut by defeating us in Clash Royale or pay double if you lose. The ultimate gaming barbershop experience.">
+    <title>Royal Cuts - Battle for Your Haircut | Clash Royale Challenge Barbershop</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        royal: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Bebas Neue', 'cursive'],
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans bg-gray-950 text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-royal-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-crown text-gold-400 text-2xl"></i>
+                    </div>
+                    <span
+                        class="font-display text-3xl bg-gradient-to-r from-royal-400 to-purple-500 bg-clip-text text-transparent">
+                        ROYAL CUTS
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-300 hover:text-white transition-colors">Home</a>
+                    <a href="#challenge" class="nav-link text-gray-300 hover:text-white transition-colors">The
+                        Challenge</a>
+                    <a href="#services" class="nav-link text-gray-300 hover:text-white transition-colors">Services</a>
+                    <a href="#gallery" class="nav-link text-gray-300 hover:text-white transition-colors">Gallery</a>
+                    <a href="#testimonials"
+                        class="nav-link text-gray-300 hover:text-white transition-colors">Reviews</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-white transition-colors">Contact</a>
+                    <button class="btn-primary">Book Now</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 backdrop-blur-lg">
+            <div class="px-4 pt-2 pb-4 space-y-3">
+                <a href="#home" class="block text-gray-300 hover:text-white py-2">Home</a>
+                <a href="#challenge" class="block text-gray-300 hover:text-white py-2">The Challenge</a>
+                <a href="#services" class="block text-gray-300 hover:text-white py-2">Services</a>
+                <a href="#gallery" class="block text-gray-300 hover:text-white py-2">Gallery</a>
+                <a href="#testimonials" class="block text-gray-300 hover:text-white py-2">Reviews</a>
+                <a href="#contact" class="block text-gray-300 hover:text-white py-2">Contact</a>
+                <button class="btn-primary w-full">Book Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-950 via-royal-900/20 to-purple-900/20">
+            <div class="absolute inset-0 opacity-30">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-royal-500/30 rounded-full blur-3xl animate-pulse">
+                </div>
+                <div
+                    class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl animate-pulse delay-1000">
+                </div>
+                <div
+                    class="absolute top-1/2 left-1/2 w-80 h-80 bg-gold-500/20 rounded-full blur-3xl animate-pulse delay-500">
+                </div>
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-8 animate-fade-in">
+                <!-- Badge -->
+                <div
+                    class="inline-flex items-center space-x-2 bg-gradient-to-r from-royal-500/20 to-purple-500/20 border border-royal-500/50 rounded-full px-6 py-2 backdrop-blur-sm">
+                    <i class="fas fa-gamepad text-gold-400"></i>
+                    <span class="text-sm font-semibold text-gray-300">Where Gaming Meets Grooming</span>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-none">
+                    <span
+                        class="block bg-gradient-to-r from-white via-royal-200 to-purple-300 bg-clip-text text-transparent">
+                        BATTLE FOR
+                    </span>
+                    <span
+                        class="block bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 bg-clip-text text-transparent mt-2">
+                        YOUR HAIRCUT
+                    </span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-xl sm:text-2xl text-gray-400 max-w-3xl mx-auto font-light">
+                    Defeat us in <span class="text-royal-400 font-semibold">Clash Royale</span> and get a
+                    <span class="text-gold-400 font-semibold">FREE haircut</span>.
+                    Lose and pay <span class="text-red-400 font-semibold">DOUBLE</span>.
+                    Do you accept the challenge?
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <button class="btn-primary btn-large group">
+                        Accept Challenge
+                        <i class="fas fa-sword ml-2 group-hover:rotate-12 transition-transform"></i>
+                    </button>
+                    <button class="btn-secondary btn-large group">
+                        View Services
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-8 max-w-3xl mx-auto pt-16">
+                    <div class="stat-card">
+                        <div class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent"
+                            data-count="1247">0</div>
+                        <div class="text-sm text-gray-400 mt-2">Battles Fought</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-royal-400 to-royal-600 bg-clip-text text-transparent"
+                            data-count="438">0</div>
+                        <div class="text-sm text-gray-400 mt-2">Free Cuts Given</div>
+                    </div>
+                    <div class="stat-card">
+                        <div
+                            class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
+                            4.9</div>
+                        <div class="text-sm text-gray-400 mt-2">★ Rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-royal-400 text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- The Challenge Section -->
+    <section id="challenge" class="py-24 bg-gradient-to-b from-gray-950 to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-royal-400 font-semibold text-sm uppercase tracking-wider">How It Works</span>
+                <h2 class="font-display text-5xl sm:text-6xl md:text-7xl mt-4 mb-6">
+                    THE <span class="text-gold-400">ROYAL</span> CHALLENGE
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Think you can beat our barbers in Clash Royale? Put your skills to the test and earn your cut!
+                </p>
+            </div>
+
+            <!-- Challenge Steps -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="challenge-card group">
+                    <div class="flex justify-center mb-6">
+                        <div
+                            class="w-20 h-20 rounded-2xl bg-gradient-to-br from-royal-500 to-royal-700 flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-all">
+                            <i class="fas fa-calendar-check text-3xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="text-6xl font-display text-gray-800 mb-4">01</div>
+                    <h3 class="text-2xl font-bold mb-3">Book Your Battle</h3>
+                    <p class="text-gray-400">Schedule your appointment and let us know you want to take the challenge.
+                        Choose your haircut style first.</p>
+                </div>
+
+                <div class="challenge-card group">
+                    <div class="flex justify-center mb-6">
+                        <div
+                            class="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-all">
+                            <i class="fas fa-gamepad text-3xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="text-6xl font-display text-gray-800 mb-4">02</div>
+                    <h3 class="text-2xl font-bold mb-3">Fight in the Arena</h3>
+                    <p class="text-gray-400">Battle against our skilled barbers in Clash Royale. Best of 3 matches
+                        determines the winner!</p>
+                </div>
+
+                <div class="challenge-card group">
+                    <div class="flex justify-center mb-6">
+                        <div
+                            class="w-20 h-20 rounded-2xl bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-all">
+                            <i class="fas fa-trophy text-3xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="text-6xl font-display text-gray-800 mb-4">03</div>
+                    <h3 class="text-2xl font-bold mb-3">Claim Your Prize</h3>
+                    <p class="text-gray-400">Win and get your haircut FREE! Lose and pay DOUBLE the price. Either way,
+                        you get premium service!</p>
+                </div>
+            </div>
+
+            <!-- Rules Card -->
+            <div
+                class="max-w-4xl mx-auto bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-3xl p-8 border border-royal-500/30 backdrop-blur-sm">
+                <div class="flex items-center space-x-3 mb-6">
+                    <i class="fas fa-scroll text-gold-400 text-2xl"></i>
+                    <h3 class="text-3xl font-bold">Challenge Rules</h3>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold mb-1">Best of 3 Format</h4>
+                            <p class="text-gray-400 text-sm">Win 2 out of 3 matches to claim victory</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold mb-1">Fair Play Only</h4>
+                            <p class="text-gray-400 text-sm">Standard tournament rules apply</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold mb-1">Any Trophy Level</h4>
+                            <p class="text-gray-400 text-sm">All skill levels welcome to challenge</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold mb-1">Service Guaranteed</h4>
+                            <p class="text-gray-400 text-sm">Premium cut regardless of result</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-royal-400 font-semibold text-sm uppercase tracking-wider">Premium Services</span>
+                <h2 class="font-display text-5xl sm:text-6xl md:text-7xl mt-4 mb-6">
+                    OUR <span class="text-gold-400">SERVICES</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Professional grooming services with a gaming twist. All prices shown below.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1: Classic Cut -->
+                <div class="service-card group">
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-royal-600 to-royal-800 rounded-2xl mb-6 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-cut text-6xl text-white/30"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full text-sm">
+                            <i class="fas fa-gamepad text-gold-400 mr-1"></i> Challenge Available
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Classic Cut</h3>
+                    <p class="text-gray-400 mb-4">Traditional haircut with modern styling techniques. Clean, sharp, and
+                        timeless.</p>
+                    <div class="flex items-baseline space-x-2 mb-4">
+                        <span class="text-3xl font-bold text-gold-400">S/.30</span>
+                        <span class="text-gray-500 line-through">S/.60 if you lose</span>
+                    </div>
+                    <div class="text-sm text-green-400 mb-4">
+                        <i class="fas fa-trophy mr-1"></i> FREE if you win!
+                    </div>
+                    <button class="btn-outline w-full">Book This Service</button>
+                </div>
+
+                <!-- Service Card 2: Royal Fade -->
+                <div class="service-card group">
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl mb-6 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-scissors text-6xl text-white/30"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full text-sm">
+                            <i class="fas fa-gamepad text-gold-400 mr-1"></i> Challenge Available
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Royal Fade</h3>
+                    <p class="text-gray-400 mb-4">Premium fade with lineup and beard trim. The complete grooming
+                        experience.</p>
+                    <div class="flex items-baseline space-x-2 mb-4">
+                        <span class="text-3xl font-bold text-gold-400">S/.45</span>
+                        <span class="text-gray-500 line-through">S/.90 if you lose</span>
+                    </div>
+                    <div class="text-sm text-green-400 mb-4">
+                        <i class="fas fa-trophy mr-1"></i> FREE if you win!
+                    </div>
+                    <button class="btn-outline w-full">Book This Service</button>
+                </div>
+
+                <!-- Service Card 3: King's Package (Most Popular) -->
+                <div class="service-card group border-2 border-gold-500/50 relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                        <span
+                            class="bg-gradient-to-r from-gold-500 to-gold-600 text-black px-4 py-1 rounded-full text-xs font-bold">
+                            MOST POPULAR
+                        </span>
+                    </div>
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-gold-600 to-gold-800 rounded-2xl mb-6 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-crown text-6xl text-white/30"></i>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full text-sm">
+                            <i class="fas fa-gamepad text-gold-400 mr-1"></i> Challenge Available
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">King's Package</h3>
+                    <p class="text-gray-400 mb-4">The ultimate treatment: Cut, fade, beard sculpting, hot towel, and
+                        styling.</p>
+                    <div class="flex items-baseline space-x-2 mb-4">
+                        <span class="text-3xl font-bold text-gold-400">S/.65</span>
+                        <span class="text-gray-500 line-through">S/.130 if you lose</span>
+                    </div>
+                    <div class="text-sm text-green-400 mb-4">
+                        <i class="fas fa-trophy mr-1"></i> FREE if you win!
+                    </div>
+                    <button class="btn-primary w-full">Book This Service</button>
+                </div>
+
+                <!-- Service Card 4: Hair Design -->
+                <div class="service-card group">
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-green-600 to-green-800 rounded-2xl mb-6 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-spray-can text-6xl text-white/30"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Hair Design</h3>
+                    <p class="text-gray-400 mb-4">Custom hair designs and patterns. Stand out from the crowd.</p>
+                    <div class="flex items-baseline space-x-2 mb-6">
+                        <span class="text-3xl font-bold text-gold-400">S/.20</span>
+                        <span class="text-gray-500 text-sm">Add-on only</span>
+                    </div>
+                    <button class="btn-outline w-full">Add to Service</button>
+                </div>
+
+                <!--Service Card 5: Beard Trim -->
+                <div class="service-card group">
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-red-600 to-red-800 rounded-2xl mb-6 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-leaf text-6xl text-white/30"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Beard Trim</h3>
+                    <p class="text-gray-400 mb-4">Professional beard shaping and maintenance. Keep it sharp.</p>
+                    <div class="flex items-baseline space-x-2 mb-6">
+                        <span class="text-3xl font-bold text-gold-400">S/.25</span>
+                        <span class="text-gray-500 text-sm">Standalone service</span>
+                    </div>
+                    <button class="btn-outline w-full">Book This Service</button>
+                </div>
+
+                <!-- Service Card 6: Kids Cut -->
+                <div class="service-card group">
+                    <div
+                        class="relative h-48 bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-2xl mb-6 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-child text-6xl text-white/30"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Kids Cut</h3>
+                    <p class="text-gray-400 mb-4">Special pricing for children under 12. Make haircuts fun!</p>
+                    <div class="flex items-baseline space-x-2 mb-6">
+                        <span class="text-3xl font-bold text-gold-400">S/.20</span>
+                        <span class="text-gray-500 text-sm">Ages 12 and under</span>
+                    </div>
+                    <button class="btn-outline w-full">Book This Service</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-gradient-to-b from-gray-900 to-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-royal-400 font-semibold text-sm uppercase tracking-wider">Our Work</span>
+                <h2 class="font-display text-5xl sm:text-6xl md:text-7xl mt-4 mb-6">
+                    VICTORY <span class="text-gold-400">GALLERY</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Check out our premium cuts and the warriors who've challenged us!
+                </p>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="gallery-item aspect-square rounded-2xl overflow-hidden" data-category="haircut">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-royal-600 to-royal-900 flex items-center justify-center">
+                        <span class="text-white/50 text-sm">Image 1</span>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square rounded-2xl overflow-hidden" data-category="battle">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-purple-600 to-purple-900 flex items-center justify-center">
+                        <span class="text-white/50 text-sm">Image 2</span>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square rounded-2xl overflow-hidden" data-category="haircut">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-gold-600 to-gold-900 flex items-center justify-center">
+                        <span class="text-white/50 text-sm">Image 3</span>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square rounded-2xl overflow-hidden" data-category="battle">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-green-600 to-green-900 flex items-center justify-center">
+                        <span class="text-white/50 text-sm">Image 4</span>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square rounded-2xl overflow-hidden md:col-span-2" data-category="shop">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-red-600 to-red-900 flex items-center justify-center">
+                        <span class="text-white/50 text-sm">Image 5</span>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square rounded-2xl overflow-hidden" data-category="haircut">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-indigo-600 to-indigo-900 flex items-center justify-center">
+                        <span class="text-white/50 text-sm">Image 6</span>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square rounded-2xl overflow-hidden" data-category="battle">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-pink-600 to-pink-900 flex items-center justify-center">
+                        <span class="text-white/50 text-sm">Image 7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-royal-400 font-semibold text-sm uppercase tracking-wider">Wall of Fame</span>
+                <h2 class="font-display text-5xl sm:text-6xl md:text-7xl mt-4 mb-6">
+                    WARRIOR <span class="text-gold-400">REVIEWS</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Hear from those who've battled in our arena
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center space-x-1 mb-4">
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"I won my battle and got an amazing fade for free! The concept
+                        is genius and the barbers are actually really good at both cutting hair AND Clash Royale. 10/10
+                        experience!"</p>
+                    <div class="flex items-center space-x-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-gradient-to-br from-royal-500 to-purple-600 flex items-center justify-center">
+                            <span class="font-bold text-lg">MJ</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Marcus Johnson</div>
+                            <div class="text-sm text-gray-400">Challenge Winner</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center space-x-1 mb-4">
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"Lost the challenge but honestly worth paying double. The
+                        haircut was incredible and the gaming atmosphere made it such a unique experience. Coming back
+                        next month!"</p>
+                    <div class="flex items-center space-x-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center">
+                            <span class="font-bold text-lg">AR</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Alex Rivera</div>
+                            <div class="text-sm text-gray-400">Regular Customer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center space-x-1 mb-4">
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"Best barbershop in the city! The gaming setup is legit and the
+                        cuts are top-tier. I've been coming here for 6 months and wouldn't go anywhere else."</p>
+                    <div class="flex items-center space-x-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center">
+                            <span class="font-bold text-lg">DS</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold">David Smith</div>
+                            <div class="text-sm text-gray-400">VIP Member</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center space-x-1 mb-4">
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"My son loves coming here! He gets excited about haircuts now
+                        because of the gaming aspect. Clean environment, skilled barbers, and a fun twist."</p>
+                    <div class="flex items-center space-x-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
+                            <span class="font-bold text-lg">TC</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Tina Chen</div>
+                            <div class="text-sm text-gray-400">Parent</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center space-x-1 mb-4">
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"Won 2-1 in an intense series! The barber was gracious in
+                        defeat and still gave me one of the best cuts I've ever had. This place is legendary!"</p>
+                    <div class="flex items-center space-x-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
+                            <span class="font-bold text-lg">KP</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Kevin Park</div>
+                            <div class="text-sm text-gray-400">Challenge Winner</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center space-x-1 mb-4">
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"Atmosphere is electric, staff is friendly, and they really
+                        know their craft. Whether you win or lose the challenge, you're getting premium service."</p>
+                    <div class="flex items-center space-x-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-700 flex items-center justify-center">
+                            <span class="font-bold text-lg">JW</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold">James Wilson</div>
+                            <div class="text-sm text-gray-400">Regular Customer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gradient-to-b from-gray-950 to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-royal-400 font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
+                <h2 class="font-display text-5xl sm:text-6xl md:text-7xl mt-4 mb-6">
+                    BOOK YOUR <span class="text-gold-400">BATTLE</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Ready to challenge us? Schedule your appointment now!
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div
+                    class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-3xl p-8 border border-royal-500/30 backdrop-blur-sm">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">First Name</label>
+                                <input type="text" class="input-field" placeholder="John" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Last Name</label>
+                                <input type="text" class="input-field" placeholder="Doe" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Email</label>
+                            <input type="email" class="input-field" placeholder="john@example.com" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Phone</label>
+                            <input type="tel" class="input-field" placeholder="+1 (555) 123-4567" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Service</label>
+                            <select class="input-field" required>
+                                <option value="">Select a service</option>
+
+                                <!-- Classic Cut -->
+                                <option value="classic">Classic Cut - S/.30 (S/.60 if you lose, FREE if you win)
+                                </option>
+
+                                <!-- Royal Fade -->
+                                <option value="fade">Royal Fade - S/.45 (S/.90 if you lose, FREE if you win)</option>
+
+                                <!-- King’s Package -->
+                                <option value="king">King's Package - S/.65 (S/.130 if you lose, FREE if you win)
+                                </option>
+
+                                <!-- Hair Design -->
+                                <option value="design">Hair Design - S/.20 (Add-on only)</option>
+
+                                <!-- Beard Trim -->
+                                <option value="beard">Beard Trim - S/.25 (Standalone service)</option>
+
+                                <!-- Kids Cut -->
+                                <option value="kids">Kids Cut - S/.20 (Ages 12 and under)</option>
+                            </select>
+                        </div>
+
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Challenge Mode</label>
+                            <div class="flex items-center space-x-4">
+                                <label class="flex items-center space-x-2 cursor-pointer">
+                                    <input type="radio" name="challenge" value="yes" class="text-royal-500">
+                                    <span>Yes, I accept the challenge!</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer">
+                                    <input type="radio" name="challenge" value="no" class="text-royal-500">
+                                    <span>Just the cut, please</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Message (Optional)</label>
+                            <textarea class="input-field" rows="4"
+                                placeholder="Any special requests or questions?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary w-full btn-large">
+                            <i class="fas fa-calendar-check mr-2"></i>
+                            Book Appointment
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <!-- Location -->
+                    <div
+                        class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-3xl p-8 border border-royal-500/30 backdrop-blur-sm">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-royal-500 to-royal-700 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Visit Us</h3>
+                                <p class="text-gray-400">Find our arena</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">
+                            123 Royal Street, Suite 100<br>
+                            Gaming District<br>
+                            Los Angeles, CA 90015
+                        </p>
+                    </div>
+
+                    <!-- Hours -->
+                    <div
+                        class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-3xl p-8 border border-royal-500/30 backdrop-blur-sm">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-clock text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Hours</h3>
+                                <p class="text-gray-400">We're open</p>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-gray-300">
+                            <div class="flex justify-between">
+                                <span>Monday - Friday</span>
+                                <span class="font-semibold">9:00 AM - 8:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Saturday</span>
+                                <span class="font-semibold">10:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Sunday</span>
+                                <span class="font-semibold">11:00 AM - 5:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Methods -->
+                    <div
+                        class="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-3xl p-8 border border-royal-500/30 backdrop-blur-sm">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-gold-500 to-gold-700 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-phone text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Contact</h3>
+                                <p class="text-gray-400">Reach out</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-phone text-royal-400"></i>
+                                <a href="tel:+15551234567" class="text-gray-300 hover:text-white transition-colors">+1
+                                    (555) 123-4567</a>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-envelope text-royal-400"></i>
+                                <a href="mailto:info@royalcuts.com"
+                                    class="text-gray-300 hover:text-white transition-colors">info@royalcuts.com</a>
+                            </div>
+                            <div class="flex items-center space-x-4 pt-4">
+                                <a href="#"
+                                    class="w-10 h-10 bg-gray-700 hover:bg-royal-500 rounded-lg flex items-center justify-center transition-colors">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-gray-700 hover:bg-royal-500 rounded-lg flex items-center justify-center transition-colors">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-gray-700 hover:bg-royal-500 rounded-lg flex items-center justify-center transition-colors">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-gray-700 hover:bg-royal-500 rounded-lg flex items-center justify-center transition-colors">
+                                    <i class="fab fa-tiktok"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-royal-500 to-purple-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-crown text-gold-400 text-2xl"></i>
+                        </div>
+                        <span
+                            class="font-display text-3xl bg-gradient-to-r from-royal-400 to-purple-500 bg-clip-text text-transparent">
+                            ROYAL CUTS
+                        </span>
+                    </div>
+                    <p class="text-gray-400 max-w-md">
+                        The world's first gaming barbershop. Challenge us in Clash Royale for a chance to win a free
+                        haircut or pay double if you lose. Either way, you get premium service!
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#challenge" class="hover:text-white transition-colors">The Challenge</a></li>
+                        <li><a href="dashboard.html" class="hover:text-white transition-colors">Admin</a></li>
+
+                </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
